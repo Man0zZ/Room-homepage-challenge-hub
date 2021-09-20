@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  display: grid;
+  font-family: "Spartan", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+  font-size: 12px;
+  position: relative;
+}
+.links::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-bottom: solid #fff;
+  opacity: 0;
+  width: 1.7rem;
+  transition: 0.2;
+  height: 0.9rem;
+}
+.links:hover::after {
+  opacity: 1;
+}
+.nav {
+  display: flex;
+  gap: 30px;
+  margin: 60px;
+}
+.nav ul {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 1fr 14%;
+  grid-template-areas:
+    "header sec"
+    "header buttons";
+}
+.header {
+  grid-area: header;
+  background-image: url("images/desktop-image-hero-1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+.sec {
+  grid-area: sec;
+  padding: 54px 80px;
+  align-self: center;
+}
+.buttons {
+  grid-area: buttons;
+}
+.sec * {
+  margin: 1.4em 0 0;
+}
+h1 {
+  font-size: 2.2em;
+}
+p {
+  color: hsl(0, 0%, 63%);
+  font-size: 11px;
+  line-height: 20px;
+}
+.btn {
+  border: none;
+  background: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 0%);
+  text-transform: uppercase;
+  letter-spacing: 9px;
+  cursor: pointer;
+  margin-right: 25px;
+}
+.btn svg:hover,
+.btn:hover {
+  color: hsl(0, 0%, 63%);
+  fill: hsl(0, 0%, 63%);
+}
+.btn svg {
+  margin-left: 15px;
+}
+.prev,
+.next {
+  background: hsl(0, 0%, 0%);
+  border: none;
+  padding: 20px 29px;
+  cursor: pointer;
+}
+.prev:hover,
+.next:hover {
+  background: hsl(0, 0%, 63%);
+}
+.buttons {
+  display: flex;
+}
+.mob-btn {
+  display: flex;
+}
+[data-shop="2"],
+[data-shop="3"] {
+  display: none;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  grid-template-areas: "content-1 content-2 content-3";
+}
+.content-1 {
+  grid-area: content-1;
+  background-image: url("images/image-about-dark.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.content-2 {
+  grid-area: content-2;
+  padding: 40px 45px;
+}
+.content-2 * {
+  margin: 1.4em 0 0;
+}
+h5 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+.content-3 {
+  grid-area: content-3;
+  background-image: url("images/image-about-light.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+@media screen and (max-width: 1024px) {
+  .content-1 {
+    margin-top: 13px;
+  }
+  .content-3 {
+    margin-top: 13px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .nav ul {
+    display: none;
+  }
+  .buttons {
+    display: none;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "header"
+      "sec";
+  }
+  .header {
+    background-image: url("images/mobile-image-hero-1.jpg");
+    position: relative;
+  }
+  .sec {
+    padding: 38px;
+    padding-top: 0px;
+  }
+  h1 {
+    font-size: 27px;
+  }
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+      "content-1"
+      "content-2"
+      "content-3";
+  }
+  .content-2 {
+    padding: 37px;
+  }
+  h5 {
+    letter-spacing: 3px;
+  }
+  .mob-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .links {
+    color: black;
+    font-weight: bold;
+  }
+  .nav_menu {
+    height: 15vh;
+    z-index: -1;
+  }
+  .menu {
+    background: rgb(255, 255, 255);
+    position: absolute;
+    top: 0;
+    height: 12vh;
+    width: 100%;
+  }
+  .nav-links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    width: 70%;
+    text-align: center;
+    margin-top: 17px;
+    margin-left: 90px;
+  }
+  .close {
+    position: relative;
+    top: 40px;
+    left: 45px;
+    width: 10%;
+  }
+  .nav_logo {
+    margin-left: 5em;
+  }
+  .nav {
+    margin-left: 30px;
+  }
+}
+
+@media screen and (min-width: 376px) {
+  .mob-btn {
+    display: none;
+  }
+  .nav_menu {
+    display: none;
+    opacity: 0;
+  }
+  .burger {
+    display: none;
+  }
+}
